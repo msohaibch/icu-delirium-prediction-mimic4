@@ -75,25 +75,6 @@ python 01_main_prediction_pipeline.py
 python 02_temporal_validation_and_subgroup_analyses.py
 ```
 
----
-
-## Key Results (from results/ folder)
-
-| Model | AUROC | 95% CI | CV AUROC | PR-AUC | Brier |
-|---|---|---|---|---|---|
-| Logistic Regression | 0.938 | — | 0.939 ± 0.004 | 0.712 | 0.061 |
-| **XGBoost (calibrated)** | **0.949** | **0.944–0.955** | **0.950 ± 0.002** | **0.757** | **0.056** |
-| Null model | — | — | — | — | 0.114 |
-
-**Dementia subgroup:**
-
-| Group | N (test) | Delirium % | AUROC |
-|---|---|---|---|
-| No dementia | 7,845 | 12.7% | 0.952 |
-| Any dementia | 304 | 22.7% | 0.868 |
-
----
-
 ## Features Used
 
 All features measured from first 24h of ICU admission (~90 variables):
@@ -127,7 +108,7 @@ The AUROC of 0.949 is higher than most published delirium prediction models (typ
 
 1. **Leakage variables are excluded in code** — `rass_assessment_count`, `antipsychotic_any`, `haloperidol`, `quetiapine` are all excluded via `LEAKAGE_COLS` in the pipeline
 2. **`rass_ever_agitated` is borderline** — this flag is still included as a feature (correlation 0.40 with outcome). Some agitation in first 24h may be early/undiagnosed delirium. Happy to discuss whether this should be removed
-3. **Random split not temporal** — the main pipeline uses random 80/20. The temporal validation in `02_temporal_validation...py` (train 2008–2018, test 2019–2022) will show whether AUROC holds up under a stricter split
+3. **Random split not temporal** — the main pipeline uses random 80/20. 
 4. **Single site** — BIDMC only. High within-site AUROC is expected; external validation is the next step
 
 Run the temporal validation script and compare — that will answer whether 0.949 is real or an artifact of the random split.
