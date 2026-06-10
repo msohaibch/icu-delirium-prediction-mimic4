@@ -1,16 +1,4 @@
 # ICU Delirium Prediction — MIMIC-IV
-### Code and Results for Review
-**Sohaib Ahmed | Emory University | June 2026**
-
----
-
-## Overview
-
-Machine learning prediction model for new-onset ICU delirium using first 24-hour clinical data from MIMIC-IV v3.1. Built as part of an Applied Practice Experience with Dr. Wenhui (Vivian) Zhang, Emory School of Nursing.
-
-**Data source:** MIMIC-IV v3.1 — Beth Israel Deaconess Medical Center (2008–2022)
-**Note:** Raw data files are NOT included here (MIMIC DUA). Will be shared separately via Drive.
-
 ---
 
 ## Cohort
