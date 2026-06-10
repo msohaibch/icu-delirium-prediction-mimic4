@@ -1,0 +1,4 @@
+Subgroup,N,N_delirium,Prevalence_%,XGBoost_AUROC,LR_AUROC,XGBoost_AP
+No dementia (dementia_icd=0),7845,999,12.7,0.952,0.941,0.746
+Dementia (dementia_icd=1),304,69,22.7,0.868,0.858,0.649
+Alzheimer's dementia,63,14,22.2,0.853,,
